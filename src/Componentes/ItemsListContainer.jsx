@@ -1,10 +1,15 @@
 import React from "react";
+import ItemCount from "./ItemCount";
 
-export  default function ItemsListContainer() {
+export  default function ItemListContainer() {
+
+
 
     return(
         <>
-         <p>Welcome GamingStyle, built with React and Bootstrap</p>
+       
+        <ItemCount inicial={1} stock={10}/>
+       
         </>
-    )
+    );
 }

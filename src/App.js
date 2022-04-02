@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './Componentes/NavBar';
 import ItemsListContainer from './Componentes/ItemsListContainer';
+import Footer from './Componentes/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <p>
          <NavBar/>
          <ItemsListContainer/>
+         <Footer/>
         </p>
       </header>
     </div>
