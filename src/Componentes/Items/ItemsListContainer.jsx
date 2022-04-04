@@ -7,10 +7,10 @@ function ItemsListContainer(){
     const [Item, setItem] = useState([]);
 
     useEffect (() => {
-        customFetch(2000,productos)
+        customFetch(3000,productos)
         .then(resultado => setItem(resultado))
         .catch(error => console.log(error));
-    },[Item])
+    },[])
 
     return (
 
@@ -19,3 +19,4 @@ function ItemsListContainer(){
         </div>
     )
 }
+export default ItemsListContainer;

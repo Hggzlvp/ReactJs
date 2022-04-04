@@ -1,10 +1,10 @@
-import React, {useState} from "react";
-
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 
+import React, {useState} from "react";
 
-const ItemContador=({inicial,stock}) => {
+
+const ItemCount=({inicial,stock}) => {
 
     const [contador,setContador] = useState(inicial);
     const [disabledMas,setDisabledMas] = useState(false);
@@ -33,10 +33,10 @@ const ItemContador=({inicial,stock}) => {
 
         <ButtonGroup className="mb-2">
             <Button variant="outline-success" className="aumentar" onClick={aumentar}  disabled={disabledMas}>   +   </Button>
-            <Button variant="outline-dark" >                                {contador}                               </Button>
+            <Button variant="outline-dark" > {contador} </Button>
             <Button variant="outline-danger" className="restar"   onClick={restar}    disabled={disabledMenos}>  -   </Button>
         </ButtonGroup> 
  );
 
 }
-export default ItemContador;
+export default ItemCount;
