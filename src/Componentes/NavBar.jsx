@@ -27,11 +27,15 @@ export  default function NavBar() {
             placement="end"
             >
             <Offcanvas.Header closeButton>
-            <Offcanvas.Title id="offcanvasNavbarLabel">Welcome</Offcanvas.Title>
+
+            <Offcanvas.Title id="offcanvasNavbarLabel">Estilos de autos</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link >Inicio</Nav.Link>
+                <Nav.Link >Deportivos</Nav.Link>
+                <Nav.Link >Familiares</Nav.Link>
+
+           <Offcanvas.Title id="offcanvasNavbarLabel">Carro</Offcanvas.Title>
                 <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown">
                     <NavDropdown.Item >Producto 1 </NavDropdown.Item>
                     <NavDropdown.Item >Producto 2</NavDropdown.Item>
@@ -39,7 +43,7 @@ export  default function NavBar() {
                 </NavDropdown>
                 </Nav>
                 <Form className="d-flex">
-                    <Button variant="outline-success">Comprar</Button>
+                    <Button variant="outline-success">Finalizar Comprar</Button>
                 </Form>
             </Offcanvas.Body>
             </Navbar.Offcanvas>

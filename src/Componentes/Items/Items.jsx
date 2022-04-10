@@ -8,7 +8,7 @@ import Container from "react-bootstrap/esm/Container";
 import ItemCount from '../ItemCount';
 
 
-function Items({id,nombre,imagen}){
+function Items({id,nombre,imagen,stock,precio}){
     return (
         <Container >
             <Row xs={1} md={2} className="g-4">
@@ -17,14 +17,16 @@ function Items({id,nombre,imagen}){
                             <Card.Img variant="top" src={imagen} />
                             <Card.Body>
                             <Card.Title>{nombre}</Card.Title>
-                            <Card.Text>
-                            <ButtonGroup className="mb-2">
 
-                                <ItemCount inicial={1} stock={10}/>
-                               
-                            </ButtonGroup> 
-                                <p> Stock disponible:{10}</p>
+                            <Card.Text>
+                                <h3>{precio}</h3>
+                                <ButtonGroup className="mb-2">
+                                    <ItemCount inicial={1} stock={stock} />
+                                </ButtonGroup> 
+
+                                <p> Stock Disponible: {stock}</p>
                              </Card.Text>
+                             
                             </Card.Body>
                         </Card>
                     </Col>
