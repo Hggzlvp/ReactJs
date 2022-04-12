@@ -9,6 +9,7 @@ import NavDropdown from "react-bootstrap/NavDropdown"
 import Offcanvas from "react-bootstrap/Offcanvas"
 
 import CartWidget from "./CartWidget";
+import IconQ from "./IconQ";
 
 
 
@@ -19,7 +20,7 @@ export  default function NavBar() {
         
     <Navbar bg="light" expand={false}>
         <Container fluid>
-            <Navbar.Brand >GamingStyle</Navbar.Brand>
+            <Navbar.Brand >{<IconQ/>}ueen Of Wheels</Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
             <Navbar.Offcanvas
             id="offcanvasNavbar"
@@ -32,8 +33,9 @@ export  default function NavBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link >Deportivos</Nav.Link>
-                <Nav.Link >Familiares</Nav.Link>
+                <Nav.Link ><Link to={"/Deportivos"}> Deportivos</Link></Nav.Link>
+                <Nav.Link to={"/Deportivos"} >Deportivos</Nav.Link>
+                <Nav.Link to={"/Familiares"} >Familiares</Nav.Link>
 
            <Offcanvas.Title id="offcanvasNavbarLabel">Carro</Offcanvas.Title>
                 <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown">

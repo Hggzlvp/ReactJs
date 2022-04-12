@@ -3,21 +3,17 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
 
+import IconQ from "./IconQ";
 
 export  default function Footer() {
 
     return(
         <>
-      <Navbar bg="dark">
+      <Navbar bg="light">
         <Container>
           <Navbar.Brand href="#home">
-            <img
-              src="/logo.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />
+            h1
+           <IconQ/>
           </Navbar.Brand>
         </Container>
       </Navbar>
