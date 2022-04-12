@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
@@ -33,9 +34,9 @@ export  default function NavBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link ><Link to={"/Deportivos"}> Deportivos</Link></Nav.Link>
-                <Nav.Link to={"/Deportivos"} >Deportivos</Nav.Link>
-                <Nav.Link to={"/Familiares"} >Familiares</Nav.Link>
+                <Nav.Link ><Link to={"/Deportivos"}> Deportivos </Link></Nav.Link>
+                <Nav.Link ><Link to={"/Familiares"}> Familiares </Link></Nav.Link>
+                
 
            <Offcanvas.Title id="offcanvasNavbarLabel">Carro</Offcanvas.Title>
                 <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown">
