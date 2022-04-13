@@ -21,6 +21,7 @@ function App() {
 
             <Route exact path="/" element={<ItemsListContainer />} />
             <Route exact path="/:category" element={<ItemsListContainer />} />
+            <Route exact path="/detalles/:id" element={<ItemDetailContainer />} />
             
           </Routes>
 

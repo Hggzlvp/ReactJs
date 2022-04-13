@@ -1,7 +1,9 @@
 import React,{useEffect,useState} from "react";
 import customFetch from "../Utils/customFetch";
-import {producto} from "../Utils/productos"
+import {productos} from "../Utils/productos"
 import ItemDetail from "./ItemDetail";
+
+import {useParams} from "react-router-dom"
 
 
 
@@ -9,15 +11,30 @@ import ItemDetail from "./ItemDetail";
 function ItemDetailContainer() {
 
     const [productito,setProductito] = useState([])
+    const {id}= useParams();
 
+    // useEffect ( () => {
+
+    //     customFetch(2000,producto)
+    //         .then(resultado => setProductito(resultado))
+    //         .catch(error => console.log(error));
+    
+    
+    // }, [])
     useEffect ( () => {
 
-        customFetch(2000,producto)
-            .then(resultado => setProductito(resultado))
-            .catch(error => console.log(error));
-    
-    
-    }, [])
+        if (id) {
+            customFetch(2000,productos)
+                    .then(resultado => setProductito(resultado.find (productito.id===id)))
+                    .catch(error => console.log(error));
+        }else {
+            customFetch(2000,productos)
+                .then(resultado => setProductito(resultado))
+                .catch(error => console.log(error));
+           
+        }
+
+    },[id])
     
 
     return (

@@ -34,8 +34,9 @@ export  default function NavBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link ><Link to={"/Deportivos"}> Deportivos </Link></Nav.Link>
-                <Nav.Link ><Link to={"/Familiares"}> Familiares </Link></Nav.Link>
+                <Nav.Link ><Link to={"/"}> Todos </Link></Nav.Link>
+                <Nav.Link ><Link to={"/Deportivo"}> Deportivos </Link></Nav.Link>
+                <Nav.Link ><Link to={"/Familiar"}> Familiares </Link></Nav.Link>
                 
 
            <Offcanvas.Title id="offcanvasNavbarLabel">Carro</Offcanvas.Title>

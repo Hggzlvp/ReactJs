@@ -10,18 +10,19 @@ function ItemsListContainer(){
     const {category}= useParams();
 
     useEffect (() => {
-        
-        customFetch(2000,productos)
-            .then(resultado => setItem(resultado))
-            .catch(error => console.log(error));
 
         if (category) {
-            setItem (productos.filter(f => f.estilo===category)) 
+            customFetch(2000,productos)
+                    .then(resultado => setItem(resultado.filter (Item => Item.estilo===category)))
+                    .catch(error => console.log(error));
         }else {
-            setItem(productos)
+            customFetch(2000,productos)
+                    .then(resultado => setItem(resultado))
+                    .catch(error => console.log(error));
+           
         }
 
-    },[])
+    },[category])
 
     return (
 
