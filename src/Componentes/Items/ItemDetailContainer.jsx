@@ -13,34 +13,17 @@ function ItemDetailContainer() {
     const [productito,setProductito] = useState([])
     const {id}= useParams();
 
-    // useEffect ( () => {
-
-    //     customFetch(2000,producto)
-    //         .then(resultado => setProductito(resultado))
-    //         .catch(error => console.log(error));
-    
-    
-    // }, [])
     useEffect ( () => {
-
-        if (id) {
             customFetch(2000,productos)
-                    .then(resultado => setProductito(resultado.find (productito.id===id)))
-                    .catch(error => console.log(error));
-        }else {
-            customFetch(2000,productos)
-                .then(resultado => setProductito(resultado))
+                .then(resultado => setProductito(resultado.find (productito => productito.id=== Number(id))))
                 .catch(error => console.log(error));
-           
-        }
 
     },[id])
     
 
     return (
         <>
-            <ItemDetail producto={productito}/>
-            
+            <ItemDetail producto={productito}/>          
         </>
     )
 }

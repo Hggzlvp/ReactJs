@@ -12,8 +12,7 @@ export  default function Footer() {
       <Navbar bg="light">
         <Container>
           <Navbar.Brand href="#home">
-            h1
-           <IconQ/>
+           <IconQ/>uuen
           </Navbar.Brand>
         </Container>
       </Navbar>
