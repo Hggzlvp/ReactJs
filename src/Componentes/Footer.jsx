@@ -9,10 +9,10 @@ export  default function Footer() {
 
     return(
         <>
-      <Navbar bg="light">
-        <Container>
-          <Navbar.Brand href="#home">
-           <IconQ/>uuen
+      <Navbar className="contenedor-footer" >
+        <Container className="hijo-footer">
+          <Navbar.Brand className="icono-footer">
+           <IconQ/>ueen of wheels
           </Navbar.Brand>
         </Container>
       </Navbar>

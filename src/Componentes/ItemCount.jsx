@@ -33,7 +33,7 @@ const ItemCount=({inicial,stock}) => {
 
         <ButtonGroup className="mb-2">
             <Button variant="outline-success" className="aumentar" onClick={aumentar}  disabled={disabledMas}>   +   </Button>
-            <Button variant="outline-dark" > {contador} </Button>
+            <Button variant="outline-dark" className="contador" > {contador} </Button>
             <Button variant="outline-danger" className="restar"   onClick={restar}    disabled={disabledMenos}>  -   </Button>
         </ButtonGroup> 
  );

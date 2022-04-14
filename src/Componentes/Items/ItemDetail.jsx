@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom";
 
 
-
+import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -11,33 +11,36 @@ import Button from "react-bootstrap/Button";
 
 
 
+
 function ItemDetail ({producto})  {
 
 
     return (
         <>
-        <h1>Detalles del {producto.nombre}</h1>
+        <Container className="div-nombre">
+            <h1 className="h1-nombre">Detalles del {producto.nombre}</h1>
+        </Container>
+        <Container>
         <Col >
             <Card>
                 <Card.Img variant="top" src={producto.imagen} />
                 <Card.Body>
-                        {/* <Card.Title>{producto.nombre}</Card.Title> */}
 
-                    <Card.Text>
-                         <h3>{producto.precio}</h3>
+                    <Card.Text className="texto-carta">
+                         <h3 className="precio">{producto.precio}</h3>
                         <ButtonGroup className="mb-2">
                             <ItemCount inicial={1} stock={producto.stock} />
                         </ButtonGroup> 
-                         <h5> #{producto.estilo} </h5>
-                        <p> Stock Disponible: {producto.stock}</p>
-                        <Button variant="outline-dark" > <Link to={`/`}> Volver </Link></Button>
-                        <Button variant="outline-dark" > <Link to={" "}>Agregar al Carrito </Link></Button>
+                         <h5 className="estilo"> #{producto.estilo} </h5>
+                        <p className="stock">  Stock Disponible: {producto.stock}</p>
+                        <Button variant="outline-dark" className="boton-volver" > <Link to={`/`}> Volver </Link></Button>
+                        <Button variant="outline-dark" className="boton-agregar"> <Link to={" "}>Agregar al Carrito </Link></Button>
                     </Card.Text>
 
                 </Card.Body>
             </Card>
          </Col>
-        
+         </Container>
         </>
 
     )

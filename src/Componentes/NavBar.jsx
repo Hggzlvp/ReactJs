@@ -19,36 +19,43 @@ export  default function NavBar() {
     return(
         <>
         
-    <Navbar bg="light" expand={false}>
-        <Container fluid>
-            <Navbar.Brand >{<IconQ/>}ueen Of Wheels</Navbar.Brand>
+    <Navbar className="contenedor-navbar" bg="light" expand={false}>
+        <Container className="hijo-navbar" fluid>
+            <Navbar.Brand className="icono-navbar">{<IconQ/>}ueen of wheels</Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
             <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             placement="end"
+            className="padre-desplegable"
             >
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header className="cabezera-desplegable">
 
-            <Offcanvas.Title id="offcanvasNavbarLabel">Estilos de autos</Offcanvas.Title>
-            </Offcanvas.Header>
+            <Offcanvas.Title id="offcanvasNavbarLabel" className="estilos-desplegable"><p className="estilos-desplegable">Estilos de autos</p></Offcanvas.Title>
+    
+            </Offcanvas.Header><hr />
+            
             <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav className="justify-content-center flex-grow-1 pe-3">
                 <Nav.Link ><Link to={"/"}> Todos </Link></Nav.Link>
                 <Nav.Link ><Link to={"/Deportivo"}> Deportivos </Link></Nav.Link>
                 <Nav.Link ><Link to={"/Familiar"}> Familiares </Link></Nav.Link>
-                
 
-           <Offcanvas.Title id="offcanvasNavbarLabel">Carro</Offcanvas.Title>
-                <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown">
-                    <NavDropdown.Item >Producto 1 </NavDropdown.Item>
-                    <NavDropdown.Item >Producto 2</NavDropdown.Item>
-                    <NavDropdown.Item >Producto 3</NavDropdown.Item>
-                </NavDropdown>
                 </Nav>
-                <Form className="d-flex">
-                    <Button variant="outline-success">Finalizar Comprar</Button>
-                </Form>
+                
+                <Offcanvas.Title id="offcanvasNavbarLabel" className="palabra-carrito">Carrito</Offcanvas.Title>
+                <hr />
+                    <Nav className="carrito-desplegable">
+                        <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown" className="carrito-desplegable">
+                            <NavDropdown.Item >Producto 1 </NavDropdown.Item>
+                            <NavDropdown.Item >Producto 2</NavDropdown.Item>
+                            <NavDropdown.Item >Producto 3</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+
+                    <Form className="d-flex">
+                        <Button variant="outline-success">Finalizar Comprar</Button>
+                    </Form>
             </Offcanvas.Body>
             </Navbar.Offcanvas>
         </Container>
