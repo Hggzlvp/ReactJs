@@ -1,5 +1,6 @@
 import React from "react"
 import {Link} from "react-router-dom";
+import {useState} from "react";
 
 
 import Container from "react-bootstrap/Container"
@@ -14,6 +15,12 @@ import Button from "react-bootstrap/Button";
 
 function ItemDetail ({producto})  {
 
+    const [Number,setNumber] = useState(0)
+
+    const agregarCarrito = (cantidad) =>(
+        setNumber(cantidad)
+    )
+    console.log(Number)
 
     return (
         <>
@@ -28,13 +35,23 @@ function ItemDetail ({producto})  {
 
                     <Card.Text className="texto-carta">
                          <h3 className="precio">{producto.precio}</h3>
+
+                        { 
+                        Number <= 0 
+                        ?
                         <ButtonGroup className="mb-2">
-                            <ItemCount inicial={1} stock={producto.stock} />
+                            <ItemCount inicial={1} stock={producto.stock} agregarCarrito={agregarCarrito} />
                         </ButtonGroup> 
+                        :
+                        <ButtonGroup className="mb-2">
+                            <Button variant="outline-dark" className="boton-agregar" > <Link to={"/cart"}>Ir al Carrito </Link></Button>
+                        </ButtonGroup>
+                        }
+
                          <h5 className="estilo"> #{producto.estilo} </h5>
                         <p className="stock">  Stock Disponible: {producto.stock}</p>
                         <Button variant="outline-dark" className="boton-volver" > <Link to={`/`}> Volver </Link></Button>
-                        <Button variant="outline-dark" className="boton-agregar"> <Link to={" "}>Agregar al Carrito </Link></Button>
+                        {/* <Button variant="outline-dark" className="boton-agregar"> <Link to={" "}>Agregar al Carrito </Link></Button> */}
                     </Card.Text>
 
                 </Card.Body>
