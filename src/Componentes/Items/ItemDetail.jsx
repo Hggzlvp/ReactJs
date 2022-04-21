@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useState,useContext} from "react";
+import {CartContext} from "../../Context/CartContext"
 
 
 import Container from "react-bootstrap/Container"
@@ -16,11 +17,7 @@ import Button from "react-bootstrap/Button";
 function ItemDetail ({producto})  {
 
     const [Number,setNumber] = useState(0)
-
-    const agregarCarrito = (cantidad) =>(
-        setNumber(cantidad)
-    )
-    console.log(Number)
+    
 
     return (
         <>
@@ -40,7 +37,7 @@ function ItemDetail ({producto})  {
                         Number <= 0 
                         ?
                         <ButtonGroup className="mb-2">
-                            <ItemCount inicial={1} stock={producto.stock} agregarCarrito={agregarCarrito} />
+                            <ItemCount inicial={1} stock={producto.stock}  />
                         </ButtonGroup> 
                         :
                         <ButtonGroup className="mb-2">

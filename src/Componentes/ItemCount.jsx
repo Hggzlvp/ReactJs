@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import React, {useState} from "react";
 
 
-const ItemCount=({inicial,stock,agregarCarrito}) => {
+const ItemCount=({inicial,stock}) => {
 
     const [contador,setContador] = useState(inicial);
     const [disabledMas,setDisabledMas] = useState(false);
@@ -29,9 +29,7 @@ const ItemCount=({inicial,stock,agregarCarrito}) => {
             setDisabledMenos(true);
         }
     };
-    const handleClick= () =>{
-        agregarCarrito(contador)
-    }
+    
 
     return (
     <Container>
@@ -41,7 +39,7 @@ const ItemCount=({inicial,stock,agregarCarrito}) => {
             <Button variant="outline-danger" className="restar"   onClick={restar}    disabled={disabledMenos}>  -   </Button>
         </ButtonGroup> 
         <br />
-        <Button variant="outline-dark" className="boton-agregar" onClick={handleClick}> <Link to={""}>Agregar al Carrito </Link></Button>
+        <Button variant="outline-dark" className="boton-agregar" onClick={addCart}> <Link to={""}>Agregar al Carrito </Link></Button>
     </Container>
  );
 
