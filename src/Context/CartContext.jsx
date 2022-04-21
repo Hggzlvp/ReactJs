@@ -19,6 +19,7 @@ const CartContextProvider = ({children}) => {
 
             setCart ([...newCart]);
             console.log(cart);
+            console.log("HOLAAA")
         
     } else {
         let product = {...item,cantidad};
@@ -37,7 +38,7 @@ const CartContextProvider = ({children}) => {
 
     return (
 
-        <CartContext.Provider value={[cart , addCart , deleteCartById ]}>
+        <CartContext.Provider value={{cart , addCart , deleteCartById }}>
             {children}
         </CartContext.Provider>
         

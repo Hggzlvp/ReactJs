@@ -1,6 +1,6 @@
 import React from "react"
 import {Link} from "react-router-dom";
-import {useState,useContext} from "react";
+import {useState} from "react";
 import {CartContext} from "../../Context/CartContext"
 
 
@@ -17,7 +17,25 @@ import Button from "react-bootstrap/Button";
 function ItemDetail ({producto})  {
 
     const [Number,setNumber] = useState(0)
+
+    const agregarCarrito = (cantidad) =>(
+        setNumber(cantidad)
+    )
+    console.log(Number)
     
+    // const context = useContext(CartContext)
+    // const [addCart] = context;
+
+    // const onAdd = () => {
+    //     const item ={
+    //         id,
+    //         nombre,
+    //         precio,
+    //         estilo,
+    //         stock
+    //     }
+    //     addCart(item)
+    // }
 
     return (
         <>
@@ -37,7 +55,7 @@ function ItemDetail ({producto})  {
                         Number <= 0 
                         ?
                         <ButtonGroup className="mb-2">
-                            <ItemCount inicial={1} stock={producto.stock}  />
+                            <ItemCount inicial={1} stock={producto.stock} prod={producto} agregarCarrito={agregarCarrito} />
                         </ButtonGroup> 
                         :
                         <ButtonGroup className="mb-2">

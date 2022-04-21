@@ -2,13 +2,18 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
+
+
 import {Link} from "react-router-dom";
-import React, {useState} from "react";
+import React, {useState,useContext} from "react";
+import {CartContext} from "../Context/CartContext"
 
 
-const ItemCount=({inicial,stock}) => {
+const ItemCount=({inicial,stock,agregarCarrito,prod}) => {
 
     const [contador,setContador] = useState(inicial);
+    const {addCart} = useContext(CartContext)
+
     const [disabledMas,setDisabledMas] = useState(false);
     const [disabledMenos,setDisabledMenos] = useState(false);
 
@@ -29,7 +34,10 @@ const ItemCount=({inicial,stock}) => {
             setDisabledMenos(true);
         }
     };
-    
+    const handleClick= () =>{
+        addCart({...prod,cantidad:contador});
+        agregarCarrito(contador)
+    }
 
     return (
     <Container>
@@ -39,7 +47,7 @@ const ItemCount=({inicial,stock}) => {
             <Button variant="outline-danger" className="restar"   onClick={restar}    disabled={disabledMenos}>  -   </Button>
         </ButtonGroup> 
         <br />
-        <Button variant="outline-dark" className="boton-agregar" onClick={addCart}> <Link to={""}>Agregar al Carrito </Link></Button>
+        <Button variant="outline-dark" className="boton-agregar" onClick={handleClick}> <Link to={""}>Agregar al Carrito </Link></Button>
     </Container>
  );
 
