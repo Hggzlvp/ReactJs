@@ -36,7 +36,7 @@ const ItemCount=({inicial,stock,agregarCarrito,prod}) => {
     };
     const handleClick= () =>{
         addCart({...prod,cantidad:contador});
-        agregarCarrito(contador)
+        
     }
 
     return (

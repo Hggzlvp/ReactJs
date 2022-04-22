@@ -7,38 +7,33 @@ const CartContextProvider = ({children}) => {
 
     const [cart,setCart] =useState([])
 
-    const addCart= (item,cantidad) => {
-        if(cart.some(element=> element.id ===item.id)) {
 
-            let index= cart.findIndex (element => element.id === item.id)
-            let product= cart[index];
-            product.cantidad = product.cantidad + cantidad;
 
-            const newCart =[...cart];
-            newCart.splice (index,1,product);
-
-            setCart ([...newCart]);
-            console.log(cart);
-            console.log("HOLAAA")
+    const addCart = (item) => {
         
-    } else {
-        let product = {...item,cantidad};
-        setCart([...Cart,product]); 
-    }};
-    
-    const deleteCartById = (id) => {
+        const indexProd = cart.findIndex((prod) => prod.id === item.id);
+        if (indexProd !== -1) {
+            const newCart = [...cart];
+            newCart[indexProd].cantidad = newCart[indexProd].cantidad + item.cantidad;
+            setCart(newCart);
+        } else {
+            setCart([...cart, item]);
+        }
+        // console.log(item);
+    };
+    console.log(cart);
 
-        let index= newCart.findIndex (element => element.id === id);
-
-        const newCart =[...cart];
-        newCart.splice (index,1);
-
-        setCart([...newCart]);
+    const removeCart = (item) => {
+        setCart(cart.filter((prod) => prod.id !== item.id));
+        console.log("Item Borrado")
     }
+
+    const buyAll = () => setCart([]);
+
 
     return (
 
-        <CartContext.Provider value={{cart , addCart , deleteCartById }}>
+        <CartContext.Provider value={{cart , addCart , removeCart , buyAll }}>
             {children}
         </CartContext.Provider>
         

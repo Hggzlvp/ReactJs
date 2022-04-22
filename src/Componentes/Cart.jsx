@@ -4,8 +4,16 @@ import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import Table from "react-bootstrap/Table"
 import Container from "react-bootstrap/Container"
+import {useState,useContext} from "react";
+import {CartContext} from "../Context/CartContext"
 
 export  default function Cart() {
+
+    const {removeCart} = useContext(CartContext)
+
+    const {buyAll} = useContext(CartContext)
+
+    const {cart}=useContext(CartContext)
 
     return(
         <>
@@ -43,9 +51,11 @@ export  default function Cart() {
         </Table>
       </Container> 
                     <Form className="d-flex">
-                        <Button variant="outline-danger" >X</Button>
-                        <Button variant="outline-success">Finalizar Comprar</Button>
+                        <Button variant="outline-danger" onClick={removeCart} >X</Button>
+                        <Button variant="outline-success"onClick={buyAll}>Finalizar Comprar</Button>
                     </Form>
         </>
     )
+   
+    );
 }
