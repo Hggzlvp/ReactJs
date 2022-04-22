@@ -4,16 +4,14 @@ import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import Table from "react-bootstrap/Table"
 import Container from "react-bootstrap/Container"
-import {useState,useContext} from "react";
+import {useContext} from "react";
 import {CartContext} from "../Context/CartContext"
 
 export  default function Cart() {
 
-    const {removeCart} = useContext(CartContext)
-
-    const {buyAll} = useContext(CartContext)
-
-    const {cart}=useContext(CartContext)
+    const {cart,removeCart,buyAll} = useContext(CartContext)
+    console.log(cart)
+    
 
     return(
         <>
@@ -27,31 +25,31 @@ export  default function Cart() {
                 <th>Nombre del auto</th>
                 <th>Precio</th>
                 <th>Total</th>
+                <th>Borrar</th>
                 </tr>
             </thead>
             <tbody>
+                {cart.length > 0 ? cart.map (item =>
                 <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
+                <td>{item.cantidad}</td>
+                <td>{item.nombre}</td>
+                <td>{item.precio}</td>
+                <td>{item.Total}</td>
+                <td><Button variant="outline-danger" onClick={removeCart} >X</Button></td>
+                </tr>)
+                :
                 <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>vacio</td>
+                <td>vacio</td>
+                <td>vacio</td>
+                <td>vacio</td>
+                <td><Button variant="outline-danger" onClick={removeCart} >X</Button></td>
                 </tr>
-                <tr>
-                <td>3</td>
-                <td colSpan={2}>Larry the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                }
             </tbody>
         </Table>
       </Container> 
                     <Form className="d-flex">
-                        <Button variant="outline-danger" onClick={removeCart} >X</Button>
                         <Button variant="outline-success"onClick={buyAll}>Finalizar Comprar</Button>
                     </Form>
         </>

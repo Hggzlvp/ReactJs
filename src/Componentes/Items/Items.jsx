@@ -1,20 +1,12 @@
 import React from "react"
 import {Link} from "react-router-dom";
 
-
-
-import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 
-import ItemCount from '../ItemCount';
 
-
-
-function Items({id,nombre,imagen,stock,precio,estilo}){
+function Items({id,nombre,imagen}){
     return ( 
        
                     <Col >
