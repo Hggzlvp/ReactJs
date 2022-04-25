@@ -12,10 +12,12 @@ export  default function Cart() {
     const {cart,removeCart,buyAll} = useContext(CartContext)
     console.log(cart)
     
-
+    
     return(
         <>
-       <h1>ESTAS EN EL CARRITO</h1>
+      <Container className="div-nombre">
+            <h1 className="h1-nombre">CARRITO</h1>
+      </Container>
       <Container>  
        <Table striped bordered hover variant="dark">
             <thead>
@@ -26,16 +28,18 @@ export  default function Cart() {
                 <th>Precio</th>
                 <th>Total</th>
                 <th>Borrar</th>
+
                 </tr>
             </thead>
             <tbody>
-                {cart.length > 0 ? cart.map (item =>
+                {
+                cart.length > 0 ? cart.map (item =>
                 <tr>
                 <td>{item.cantidad}</td>
                 <td>{item.nombre}</td>
                 <td>{item.precio}</td>
-                <td>{item.Total}</td>
-                <td><Button variant="outline-danger" onClick={removeCart} >X</Button></td>
+                <td>{item.cantidad * parseInt(item.precio)} € </td>
+                <td><Button variant="outline-danger" onClick={() => removeCart(item)} >X</Button></td>
                 </tr>)
                 :
                 <tr>
@@ -43,10 +47,21 @@ export  default function Cart() {
                 <td>vacio</td>
                 <td>vacio</td>
                 <td>vacio</td>
-                <td><Button variant="outline-danger" onClick={removeCart} >X</Button></td>
+                <td><Button variant="outline-danger" disabled >X</Button></td>
                 </tr>
                 }
             </tbody>
+            <thead>
+                <tr>
+                
+                <th>0</th>
+                <th>-</th>
+                <th>Total</th>
+                <th>0</th>
+                <th>-</th>
+                
+                </tr>
+            </thead>
         </Table>
       </Container> 
                     <Form className="d-flex">
