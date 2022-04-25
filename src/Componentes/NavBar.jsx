@@ -45,17 +45,21 @@ export  default function NavBar() {
                 
                 <Offcanvas.Title id="offcanvasNavbarLabel" className="palabra-carrito">Carrito</Offcanvas.Title>
                 <hr />
+
+                {/* ACA */}
+
                     <Nav className="carrito-desplegable">
-                        <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown" className="carrito-desplegable">
+                        {/* <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown" className="carrito-desplegable">
                             <NavDropdown.Item >Producto 1 </NavDropdown.Item>
                             <NavDropdown.Item >Producto 2</NavDropdown.Item>
                             <NavDropdown.Item >Producto 3</NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown> */}
+                        <Nav.Link className="carrito-desplegable" ><Link to={"/cart"}> { <CartWidget/> } </Link></Nav.Link>
                     </Nav>
+                    
+                {/* ACA */}
 
-                    <Form className="d-flex">
-                        <Button variant="outline-success">Finalizar Comprar</Button>
-                    </Form>
+                   
             </Offcanvas.Body>
             </Navbar.Offcanvas>
         </Container>

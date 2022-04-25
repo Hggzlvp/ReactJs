@@ -9,7 +9,7 @@ import {CartContext} from "../Context/CartContext"
 
 export  default function Cart() {
 
-    const {cart,removeCart,buyAll} = useContext(CartContext)
+    const {cart,removeCart,buyAll,valorTotal,cantidadTotal} = useContext(CartContext)
     console.log(cart)
     
     
@@ -54,10 +54,10 @@ export  default function Cart() {
             <thead>
                 <tr>
                 
-                <th>0</th>
+                <th>{cantidadTotal()}</th>
                 <th>-</th>
                 <th>Total</th>
-                <th>0</th>
+                <th>{valorTotal()}</th>
                 <th>-</th>
                 
                 </tr>
