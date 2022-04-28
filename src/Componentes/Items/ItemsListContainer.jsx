@@ -1,29 +1,30 @@
 import React,{useEffect,useState} from "react";
-import customFetch from "../Utils/customFetch";
-import {productos} from "../Utils/productos"
 import ItemsList from "./ItemsList";
 import {useParams} from "react-router-dom"
+
+import {collection,getDocs, getFirestore,query,where} from "firebase/firestore"
 
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 
 function ItemsListContainer(){
 
+
     const [Item, setItem] = useState([]);
     const {category}= useParams();
 
+
     useEffect (() => {
 
-        if (category) {
-            customFetch(2000,productos)
-                    .then(resultado => setItem(resultado.filter (Item => Item.estilo===category)))
-                    .catch(error => console.log(error));
-        }else {
-            customFetch(2000,productos)
-                    .then(resultado => setItem(resultado))
-                    .catch(error => console.log(error));
-           
-        }
+        const db = getFirestore();
+
+        let productosRef =(collection(db,"productos"));
+        if (category) productosRef = query(productosRef,where("estilo","==",category));
+
+
+        getDocs(productosRef).then((res)=> {
+            setItem(res.docs.map((item)=> ({id:item.id, ...item.data() })));
+        })
 
     },[category])
 
