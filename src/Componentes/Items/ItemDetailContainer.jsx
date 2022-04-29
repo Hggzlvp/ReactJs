@@ -10,7 +10,7 @@ import {doc,getDoc, getFirestore} from "firebase/firestore"
 
 function ItemDetailContainer() {
 
-    const [productito,setProductito] = useState()
+    const [productito,setProductito] = useState({})
     const {id}= useParams();
 
     useEffect ( () => {

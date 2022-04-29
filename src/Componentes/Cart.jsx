@@ -37,7 +37,7 @@ export  default function Cart() {
                 <tr>
                 <td>{item.cantidad}</td>
                 <td>{item.nombre}</td>
-                <td>{item.precio}</td>
+                <td>{item.precio} €</td>
                 <td>{item.cantidad * parseInt(item.precio)} € </td>
                 <td><Button variant="outline-danger" onClick={() => removeCart(item)} >X</Button></td>
                 </tr>)
@@ -57,7 +57,7 @@ export  default function Cart() {
                 <th>{cantidadTotal()}</th>
                 <th>-</th>
                 <th>Total</th>
-                <th>{valorTotal()}</th>
+                <th>{valorTotal()} €</th>
                 <th>-</th>
                 
                 </tr>
