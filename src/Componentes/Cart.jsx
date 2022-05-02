@@ -4,13 +4,44 @@ import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import Table from "react-bootstrap/Table"
 import Container from "react-bootstrap/Container"
-import {useContext} from "react";
 import {CartContext} from "../Context/CartContext"
+import { useState, useEffect,useContext } from "react";
+import {collection,addDoc, getFirestore} from "firebase/firestore"
+
+
 
 export  default function Cart() {
 
     const {cart,removeCart,buyAll,valorTotal,cantidadTotal} = useContext(CartContext)
-    console.log(cart)
+
+    const [name, setName] =   useState();
+    const [email, setEmail] = useState();
+    const [phone, setPhone] = useState();
+
+   function  terminarCompra () {
+
+    const db = getFirestore();
+    const Ventas =collection(db,"Ventas");
+    
+
+    //example buyer
+    let buyer = {
+        buyer: { name, phone, email },
+        items: cart,
+        total: valorTotal(),
+    }; 
+
+    addDoc(Ventas,buyer).then(({id}) => {
+        console.log(id)
+    })
+
+    alert("Tu pedido se ha registrado" + "\n"+ name +"\n"+ email +"\n" +phone);
+    }
+
+    // useEffect(() => {
+    //     console.log(name, email, phone);
+    //     }, [name, email, phone]);
+    
     
     
     return(
@@ -63,9 +94,24 @@ export  default function Cart() {
                 </tr>
             </thead>
         </Table>
-      </Container> 
+      </Container>
+      <Container>
+
+        <p>Pone tus datos para finalizar la compra</p>
+        <Form>
+            
+            <input placeholder={"Nombre y apellido"}  type={"text"} value={name}
+            onChange={(e) => {setName(e.currentTarget.value);}}/>
+
+            <input placeholder={"E-mail"} type={"email"} value={email}
+            onChange={(e) => {setEmail(e.currentTarget.value);}}/>
+
+            <input placeholder={"Numero de Celular"} type={"number"} value={phone}
+            onChange={(e) => {setPhone(e.currentTarget.value);}}/>
+        </Form>
+      </Container>
                     <Form className="d-flex">
-                        <Button variant="outline-success"onClick={buyAll}>Finalizar Comprar</Button>
+                        <Button variant="outline-success" onClick={terminarCompra}>Finalizar Comprar</Button>
                     </Form>
         </>
     )
