@@ -134,9 +134,9 @@ hr{
     color: black;
     box-shadow: 10px 10px 10px #888888 !important;
 }
-.h1-nombre{
+/* .h1-nombre{
   text-shadow: 1px 1px 2px rgb(167, 124, 32);;
-}
+} */
 .texto-carta{
   text-align-last: center;
 }
@@ -164,3 +164,57 @@ margin: 25px 25px;
 .boton-agregar{
 margin-top: 20px;
 }
+/* INPUTS */
+input{
+    width: 50%;
+    padding: 10px 10px 10px 5px;
+    border: none;
+    resize: none;
+    border-bottom: 1px solid;
+    /* margin-top: 70px;
+    margin-bottom: 15px;  */
+}
+input:focus{
+    outline: none;
+    color: rgb(167, 124, 32);
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+.contenedor-inputs {
+  text-align: -webkit-center;
+  margin-bottom: 10%;
+}
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+ul li {
+  padding: 20px;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+ul li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.texto-datos{
+  font-family: 'Cinzel';
+  font-style: italic;
+  font-size: x-large;
+  font-weight: bolder;
+  margin: 10% 0% 2% 0%;
+}
+.texto-carrito{
+    font-family: 'Cinzel';
+    margin: 2%;
+    letter-spacing: 2px;
+    font-size: xxx-large;
+}
+table {
+  text-align: center !important;
+  color: darkgoldenrod !important;
+  font-family: 'Cinzel'!important;
+}
+
+
