@@ -134,9 +134,6 @@ hr{
     color: black;
     box-shadow: 10px 10px 10px #888888 !important;
 }
-/* .h1-nombre{
-  text-shadow: 1px 1px 2px rgb(167, 124, 32);;
-} */
 .texto-carta{
   text-align-last: center;
 }
@@ -216,5 +213,20 @@ table {
   color: darkgoldenrod !important;
   font-family: 'Cinzel'!important;
 }
-
+.botonSubmit{
+  width: 25%;
+  font-family: 'Cinzel';
+  border: none;
+  resize: none;
+  border-bottom: 1px solid;
+  outline: none;
+  background: white;
+  font-weight: bold;
+}
+.botonSubmit:focus{
+  outline: none;
+    color: rgb(22, 207, 5);
+    -webkit-transition: 1s;
+    transition: 1s;
+}
 
