@@ -19,8 +19,5 @@ REACT-ROUTER-DOM /
 SWEET ALERT 2
 
 ## Base de datos
-<<<<<<< HEAD
 FIREBASE
-=======
-FIREBASE
->>>>>>> 519d1881d62a6bf32d412a0381813a3448e97cdd
+
