@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import {Link} from "react-router-dom";
 import React, {useState,useContext} from "react";
 import {CartContext} from "../Context/CartContext"
+import Swal from "sweetalert2";
 
 
 const ItemCount=({inicial,stock,prod,agregarCarrito}) => {
@@ -35,6 +36,17 @@ const ItemCount=({inicial,stock,prod,agregarCarrito}) => {
     const handleClick= () =>{
         addCart({...prod,cantidad:contador});
         agregarCarrito()
+
+        Swal.fire({
+            text:"AGREGADO AL CARRITO",
+            icon:"success",
+            showConfirmButton:false,
+            backdrop:false,
+            timer:1500,
+            background:"#000",
+            toast:true,
+            position:"top-end"
+          })
         
     }
 

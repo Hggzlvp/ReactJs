@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container"
 import {CartContext} from "../Context/CartContext"
 import { useState,useContext } from "react";
 import {collection,addDoc, getFirestore} from "firebase/firestore"
+import Swal from "sweetalert2";
 
 
 
@@ -33,11 +34,20 @@ export  default function Cart() {
         total: valorTotal(),
     }; 
     addDoc(Ventas,buyer).then(({id}) => {
-        alert("Gracias por tu compra " + name + "\n" + "Tu numero de pedido es :" + id);
-        
-    })
-    // alert("Gracias por tu compra " + name + "\n" + "Tu numero de pedido es :" + {id});
-}
+        // alert("Gracias por tu compra " + name + "\n" + "Tu numero de pedido es :" + id);
+
+        Swal.fire({
+            title:"COMPRA EXITOSA",
+            icon:"success",
+            text:"Gracias por confiar en Queen Of Wheels " + name,
+            showConfirmButton:false,
+            backdrop:true,
+            background:"#000",
+            footer:"Copia y guarda tu codigo de compra: " + id
+            
+        });
+    })}
+
 
     return(
         <>
@@ -143,3 +153,4 @@ export  default function Cart() {
    
    
 }
+
