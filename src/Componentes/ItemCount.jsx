@@ -41,7 +41,6 @@ const ItemCount=({inicial,stock,prod,agregarCarrito}) => {
             text:"AGREGADO AL CARRITO",
             icon:"success",
             showConfirmButton:false,
-            backdrop:false,
             timer:1500,
             background:"#000",
             toast:true,

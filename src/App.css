@@ -47,6 +47,9 @@ letter-spacing: 2px;
   letter-spacing: 2px;
 }
 /* Desplegable */
+.linksNav{
+  margin-bottom: 5%;
+}
 hr{
   color: rgb(226, 188, 15) !important;
 }

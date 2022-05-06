@@ -16,12 +16,7 @@ function Items({id,nombre,imagen}){
                             <Card.Title className="nombre-auto">{nombre}</Card.Title>
 
                             <Card.Text>
-                                {/* <h3>{precio}</h3> */}
-                                {/* <ButtonGroup className="mb-2">
-                                    <ItemCount inicial={1} stock={stock} />
-                                </ButtonGroup>  */}
-                                    {/* <h5> #{estilo} </h5>
-                                <p> Stock Disponible: {stock}</p> */}
+                               
                              </Card.Text>
                              <Button variant="outline-dark" className="boton-detalle" > <Link to={`/detalles/${id}`}> Ver Detalles </Link></Button>
                             </Card.Body>

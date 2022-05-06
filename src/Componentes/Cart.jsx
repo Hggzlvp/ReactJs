@@ -47,7 +47,11 @@ export  default function Cart() {
             
         });
     })}
-
+    // handleClick (terminarCompra,buyAll) => {
+    //     if (terminarCompra = true){
+    //         buyAll
+    //     }
+    // }
 
     return(
         <>

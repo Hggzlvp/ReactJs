@@ -33,8 +33,9 @@ function ItemDetail ({producto})  {
                 <Card.Img variant="top" src={producto.imagen} />
                 <Card.Body>
 
-                    <Card.Text className="texto-carta">
-                         <h3 className="precio">{producto.precio}</h3>
+                    <div className="texto-carta">
+
+                         <h2 className="precio">{producto.precio} €</h2>
 
                         { 
                         Number <= 0 
@@ -48,11 +49,11 @@ function ItemDetail ({producto})  {
                         </ButtonGroup>
                         }
 
-                         <h5 className="estilo"> #{producto.estilo} </h5>
+                        <p className="estilo"> #{producto.estilo} </p>
                         <p className="stock">  Stock Disponible: {producto.stock}</p>
+                        
                         <Button variant="outline-dark" className="boton-volver" > <Link to={`/`}> Volver </Link></Button>
-                        {/* <Button variant="outline-dark" className="boton-agregar"> <Link to={" "}>Agregar al Carrito </Link></Button> */}
-                    </Card.Text>
+                    </div>
 
                 </Card.Body>
             </Card>

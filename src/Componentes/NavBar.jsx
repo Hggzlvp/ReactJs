@@ -37,29 +37,19 @@ export  default function NavBar() {
             
             <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
-                <Nav.Link ><Link to={"/"}> Todos </Link></Nav.Link>
-                <Nav.Link ><Link to={"/Deportivo"}> Deportivos </Link></Nav.Link>
-                <Nav.Link ><Link to={"/Familiar"}> Familiares </Link></Nav.Link>
+
+                    <Link className="linksNav" to={"/"}> Todos </Link>
+                    <Link className="linksNav" to={"/Deportivo"}> Deportivos </Link>
+                    <Link className="linksNav" to={"/Familiar"}> Familiares </Link>
 
                 </Nav>
                 
                 <Offcanvas.Title id="offcanvasNavbarLabel" className="palabra-carrito">Carrito</Offcanvas.Title>
                 <hr />
-
-                {/* ACA */}
-
                     <Nav className="carrito-desplegable">
-                        {/* <NavDropdown title={<CartWidget/>} id="offcanvasNavbarDropdown" className="carrito-desplegable">
-                            <NavDropdown.Item >Producto 1 </NavDropdown.Item>
-                            <NavDropdown.Item >Producto 2</NavDropdown.Item>
-                            <NavDropdown.Item >Producto 3</NavDropdown.Item>
-                        </NavDropdown> */}
-                        <Nav.Link className="carrito-desplegable" ><Link to={"/cart"}> { <CartWidget/> } </Link></Nav.Link>
+                        <div className="carrito-desplegable" ><Link to={"/cart"}> { <CartWidget/> } </Link></div>
                     </Nav>
-                    
-                {/* ACA */}
-
-                   
+                      
             </Offcanvas.Body>
             </Navbar.Offcanvas>
         </Container>

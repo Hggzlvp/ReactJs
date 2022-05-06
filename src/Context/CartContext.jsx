@@ -32,7 +32,7 @@ const CartContextProvider = ({children}) => {
 
     const removeCart = (item) => {
         setCart(cart.filter((prod) => prod.id !== item.id));
-        console.log("Item Borrado")
+        
     }
 
     const buyAll = () => setCart([]);
