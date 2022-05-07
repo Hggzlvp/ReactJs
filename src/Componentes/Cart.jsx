@@ -71,7 +71,7 @@ export  default function Cart() {
                     <tbody>
                         {
                         cart.length > 0 ? cart.map (item =>
-                        <tr>
+                        <tr key={item.id}>
                         <td>{item.cantidad}</td>
                         <td>{item.nombre}</td>
                         <td>{item.precio} €</td>
