@@ -4,6 +4,7 @@ import ItemDetail from "./ItemDetail";
 import {useParams} from "react-router-dom"
 
 import {doc,getDoc, getFirestore} from "firebase/firestore"
+import { NewtonsCradle } from '@uiball/loaders'
 
 
 
@@ -29,7 +30,19 @@ function ItemDetailContainer() {
 
     return (
         <>
-            <ItemDetail producto={productito}/>          
+        {
+            productito 
+            ?
+            <ItemDetail producto={productito}/> 
+            :
+            <div className="divLoader">
+            <NewtonsCradle 
+            size={70}
+            speed={1.4} 
+            color="black" 
+            />
+            </div> 
+        }       
         </>
     )
 }

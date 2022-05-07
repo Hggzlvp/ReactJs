@@ -253,3 +253,13 @@ table {
     transition: 1s;
 }
 
+/* LOADER */
+.divLoader{
+    justify-content: center;
+    text-align: -webkit-center;
+}
+.g-4{
+    justify-content: center;
+    text-align: -webkit-center;
+    
+}

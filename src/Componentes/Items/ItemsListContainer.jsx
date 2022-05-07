@@ -6,6 +6,9 @@ import {collection,getDocs, getFirestore,query,where} from "firebase/firestore"
 
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
+import { NewtonsCradle } from '@uiball/loaders'
+
+
 
 function ItemsListContainer(){
 
@@ -34,7 +37,18 @@ function ItemsListContainer(){
         
             <Row xs={1} md={2}   className="g-4">
 
+            {
+            Item.length > 0 ?
             <ItemsList productos={Item}/>
+            :
+            <div className="divLoader">
+            <NewtonsCradle 
+            size={70}
+            speed={1.4} 
+            color="black" 
+            />
+            </div>
+            }
 
             </Row>
         
