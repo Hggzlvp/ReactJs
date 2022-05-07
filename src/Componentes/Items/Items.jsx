@@ -18,7 +18,7 @@ function Items({id,nombre,imagen}){
                             <Card.Text>
                                
                              </Card.Text>
-                             <Button variant="outline-dark" className="boton-detalle" > <Link to={`/detalles/${id}`}> Ver Detalles </Link></Button>
+                             <Link to={`/detalles/${id}`} className="boton-detalle"><Button variant="outline-dark" className="boton-detalle" > Ver Detalles </Button></Link>
                             </Card.Body>
                         </Card>
                     </Col>

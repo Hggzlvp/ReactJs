@@ -160,9 +160,29 @@ margin: 25px 25px;
 }
 .boton-volver{
   margin: 25px 25px;
+  text-decoration: none !important;
+  color: rgb(77, 77, 77) !important;
+  font-family: 'Beau Rivage', cursive;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  letter-spacing: 2px;
 }
 .boton-agregar{
-margin-top: 20px;
+  margin-top: 20px;
+  text-decoration: none !important;
+  color: rgb(77, 77, 77) !important;
+  font-family: 'Beau Rivage', cursive;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  letter-spacing: 2px;
+}
+.boton-detalle{
+  text-decoration: none !important;
+  color: rgb(77, 77, 77) !important;
+  font-family: 'Beau Rivage', cursive;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  letter-spacing: 2px;
 }
 /* INPUTS */
 input{

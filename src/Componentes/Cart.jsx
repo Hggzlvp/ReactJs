@@ -8,7 +8,7 @@ import {CartContext} from "../Context/CartContext"
 import { useState,useContext } from "react";
 import {collection,addDoc, getFirestore} from "firebase/firestore"
 import Swal from "sweetalert2";
-
+import { NewtonsCradle } from '@uiball/loaders'
 
 
 export  default function Cart() {
@@ -17,25 +17,22 @@ export  default function Cart() {
 
     const [name, setName] =   useState();
     const [email, setEmail] = useState();
-    const [phone, setPhone] = useState();
-    // const [idVenta,setIdVenta]=useState();
+    const [phone, setPhone] = useState();  
+  
 
    function  terminarCompra (event) {
 
     const db = getFirestore();
     const Ventas =collection(db,"Ventas");
-    
     event.preventDefault()
 
-    //example buyer
     let buyer = {
         buyer: { name, phone, email },
         items: cart,
         total: valorTotal(),
     }; 
-    addDoc(Ventas,buyer).then(({id}) => {
-        // alert("Gracias por tu compra " + name + "\n" + "Tu numero de pedido es :" + id);
 
+    addDoc(Ventas,buyer).then(({id}) => {
         Swal.fire({
             title:"COMPRA EXITOSA",
             icon:"success",
@@ -46,13 +43,13 @@ export  default function Cart() {
             footer:"Copia y guarda tu codigo de compra: " + id
             
         });
-    })}
-    // handleClick (terminarCompra,buyAll) => {
-    //     if (terminarCompra = true){
-    //         buyAll
-    //     }
-    // }
+    })
+    
+    buyAll()
+    
+}
 
+  
     return(
         <>
       <Container className="contenedor-inputs">
